@@ -7,6 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		F47D60DA22A6CC3C006AFC5A /* HistoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F47D60D922A6CC3C006AFC5A /* HistoryViewController.swift */; };
+		F47D60E022A6D0A1006AFC5A /* AddRunViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F47D60DF22A6D0A1006AFC5A /* AddRunViewController.swift */; };
+		F47D60E322A6D5CF006AFC5A /* Run+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = F47D60E122A6D5CF006AFC5A /* Run+CoreDataClass.swift */; };
+		F47D60E422A6D5CF006AFC5A /* Run+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = F47D60E222A6D5CF006AFC5A /* Run+CoreDataProperties.swift */; };
+		F47D60E622A7AA50006AFC5A /* HistoryTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F47D60E522A7AA50006AFC5A /* HistoryTableViewCell.swift */; };
 		F4C23ED222A56D82004CD90F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4C23ED122A56D82004CD90F /* AppDelegate.swift */; };
 		F4C23ED422A56D82004CD90F /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4C23ED322A56D82004CD90F /* ViewController.swift */; };
 		F4C23ED722A56D82004CD90F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F4C23ED522A56D82004CD90F /* Main.storyboard */; };
@@ -28,6 +33,11 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		F47D60D922A6CC3C006AFC5A /* HistoryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryViewController.swift; sourceTree = "<group>"; };
+		F47D60DF22A6D0A1006AFC5A /* AddRunViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddRunViewController.swift; sourceTree = "<group>"; };
+		F47D60E122A6D5CF006AFC5A /* Run+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Run+CoreDataClass.swift"; sourceTree = "<group>"; };
+		F47D60E222A6D5CF006AFC5A /* Run+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Run+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		F47D60E522A7AA50006AFC5A /* HistoryTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryTableViewCell.swift; sourceTree = "<group>"; };
 		F4C23ECE22A56D82004CD90F /* someapp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = someapp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F4C23ED122A56D82004CD90F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		F4C23ED322A56D82004CD90F /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -81,6 +91,8 @@
 		F4C23ED022A56D82004CD90F /* someapp */ = {
 			isa = PBXGroup;
 			children = (
+				F47D60E122A6D5CF006AFC5A /* Run+CoreDataClass.swift */,
+				F47D60E222A6D5CF006AFC5A /* Run+CoreDataProperties.swift */,
 				F4C23ED122A56D82004CD90F /* AppDelegate.swift */,
 				F4C23ED322A56D82004CD90F /* ViewController.swift */,
 				F4C23ED522A56D82004CD90F /* Main.storyboard */,
@@ -89,6 +101,9 @@
 				F4C23EE022A56D84004CD90F /* Info.plist */,
 				F4C23ED822A56D82004CD90F /* someapp.xcdatamodeld */,
 				F4C23EF422A57B6C004CD90F /* LoginViewController.swift */,
+				F47D60D922A6CC3C006AFC5A /* HistoryViewController.swift */,
+				F47D60DF22A6D0A1006AFC5A /* AddRunViewController.swift */,
+				F47D60E522A7AA50006AFC5A /* HistoryTableViewCell.swift */,
 			);
 			path = someapp;
 			sourceTree = "<group>";
@@ -203,10 +218,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F47D60E622A7AA50006AFC5A /* HistoryTableViewCell.swift in Sources */,
 				F4C23EF522A57B6C004CD90F /* LoginViewController.swift in Sources */,
 				F4C23ED422A56D82004CD90F /* ViewController.swift in Sources */,
+				F47D60E022A6D0A1006AFC5A /* AddRunViewController.swift in Sources */,
 				F4C23EDA22A56D82004CD90F /* someapp.xcdatamodeld in Sources */,
+				F47D60DA22A6CC3C006AFC5A /* HistoryViewController.swift in Sources */,
 				F4C23ED222A56D82004CD90F /* AppDelegate.swift in Sources */,
+				F47D60E422A6D5CF006AFC5A /* Run+CoreDataProperties.swift in Sources */,
+				F47D60E322A6D5CF006AFC5A /* Run+CoreDataClass.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

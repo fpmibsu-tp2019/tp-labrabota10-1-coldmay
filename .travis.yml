@@ -1,4 +1,4 @@
 language: objective-c
-xcode_workspace: someapp.xcworkspace
-xcode_scheme: someappTests
+xcode_workspace: someapp/someapp.xcworkspace
+xcode_scheme: someapp/someappTests
 xcode_destination: platform=iOS Simulator,OS=12.0,name=iPhone 8

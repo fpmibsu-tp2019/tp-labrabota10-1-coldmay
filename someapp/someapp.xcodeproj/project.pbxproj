@@ -556,6 +556,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.volha.tp.someappTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "";
 				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/someapp.app/someapp";
@@ -576,6 +577,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.volha.tp.someappTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "";
 				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/someapp.app/someapp";

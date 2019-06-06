@@ -3,10 +3,12 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1DC8EC5D22A81D89005BB19E /* WeatherViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DC8EC5C22A81D89005BB19E /* WeatherViewController.swift */; };
+		1DC8EC6022A81EEC005BB19E /* Configuration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DC8EC5F22A81EEC005BB19E /* Configuration.swift */; };
 		684892C822A727A40079445C /* ViewControllerBMI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 684892C722A727A40079445C /* ViewControllerBMI.swift */; };
 		68BDCF5722A81D9F0085AA44 /* ViewControllerMap.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68BDCF5622A81D9F0085AA44 /* ViewControllerMap.swift */; };
 		78A227E518330853CB9AE75D /* libPods-someapp.a in Frameworks */ = {isa = PBXBuildFile; fileRef = B3ED241D6F357B63150D1275 /* libPods-someapp.a */; };
@@ -15,8 +17,6 @@
 		F47D60E322A6D5CF006AFC5A /* Run+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = F47D60E122A6D5CF006AFC5A /* Run+CoreDataClass.swift */; };
 		F47D60E422A6D5CF006AFC5A /* Run+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = F47D60E222A6D5CF006AFC5A /* Run+CoreDataProperties.swift */; };
 		F47D60E622A7AA50006AFC5A /* HistoryTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F47D60E522A7AA50006AFC5A /* HistoryTableViewCell.swift */; };
-		1DC8EC5D22A81D89005BB19E /* WeatherViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DC8EC5C22A81D89005BB19E /* WeatherViewController.swift */; };
-		1DC8EC6022A81EEC005BB19E /* Configuration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DC8EC5F22A81EEC005BB19E /* Configuration.swift */; };
 		F4C23ED222A56D82004CD90F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4C23ED122A56D82004CD90F /* AppDelegate.swift */; };
 		F4C23ED422A56D82004CD90F /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4C23ED322A56D82004CD90F /* ViewController.swift */; };
 		F4C23ED722A56D82004CD90F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F4C23ED522A56D82004CD90F /* Main.storyboard */; };
@@ -38,6 +38,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		1DC8EC5C22A81D89005BB19E /* WeatherViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherViewController.swift; sourceTree = "<group>"; };
+		1DC8EC5F22A81EEC005BB19E /* Configuration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Configuration.swift; sourceTree = "<group>"; };
 		658BA201EA8A6DE084079C01 /* Pods-someapp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-someapp.debug.xcconfig"; path = "Target Support Files/Pods-someapp/Pods-someapp.debug.xcconfig"; sourceTree = "<group>"; };
 		684892C722A727A40079445C /* ViewControllerBMI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewControllerBMI.swift; sourceTree = "<group>"; };
 		68BDCF5622A81D9F0085AA44 /* ViewControllerMap.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewControllerMap.swift; sourceTree = "<group>"; };
@@ -48,8 +50,6 @@
 		F47D60E122A6D5CF006AFC5A /* Run+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Run+CoreDataClass.swift"; sourceTree = "<group>"; };
 		F47D60E222A6D5CF006AFC5A /* Run+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Run+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		F47D60E522A7AA50006AFC5A /* HistoryTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryTableViewCell.swift; sourceTree = "<group>"; };
-		1DC8EC5C22A81D89005BB19E /* WeatherViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherViewController.swift; sourceTree = "<group>"; };
-		1DC8EC5F22A81EEC005BB19E /* Configuration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Configuration.swift; sourceTree = "<group>"; };
 		F4C23ECE22A56D82004CD90F /* someapp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = someapp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F4C23ED122A56D82004CD90F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		F4C23ED322A56D82004CD90F /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -83,16 +83,6 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		2C2582BC5BE15184388A060E /* Pods */ = {
-			isa = PBXGroup;
-			children = (
-				658BA201EA8A6DE084079C01 /* Pods-someapp.debug.xcconfig */,
-				8561CA7B04382902B9AD5B9E /* Pods-someapp.release.xcconfig */,
-			);
-			name = Pods;
-			path = Pods;
-			sourceTree = "<group>";
-		};
 		1DC8EC5B22A81C4C005BB19E /* Controller */ = {
 			isa = PBXGroup;
 			children = (
@@ -107,6 +97,15 @@
 				1DC8EC5F22A81EEC005BB19E /* Configuration.swift */,
 			);
 			path = Configuration;
+			sourceTree = "<group>";
+		};
+		2C2582BC5BE15184388A060E /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				658BA201EA8A6DE084079C01 /* Pods-someapp.debug.xcconfig */,
+				8561CA7B04382902B9AD5B9E /* Pods-someapp.release.xcconfig */,
+			);
+			path = Pods;
 			sourceTree = "<group>";
 		};
 		DA7704BE68A5ACAC226F5745 /* Frameworks */ = {
@@ -500,6 +499,7 @@
 					"$(PROJECT_DIR)",
 				);
 				INFOPLIST_FILE = someapp/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.4;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -509,7 +509,7 @@
 				SWIFT_INSTALL_OBJC_HEADER = NO;
 				SWIFT_OBJC_BRIDGING_HEADER = "";
 				SWIFT_PRECOMPILE_BRIDGING_HEADER = NO;
-				SWIFT_VERSION = 4.2;
+				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
@@ -527,6 +527,7 @@
 					"$(PROJECT_DIR)",
 				);
 				INFOPLIST_FILE = someapp/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.4;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -536,7 +537,7 @@
 				SWIFT_INSTALL_OBJC_HEADER = NO;
 				SWIFT_OBJC_BRIDGING_HEADER = "";
 				SWIFT_PRECOMPILE_BRIDGING_HEADER = NO;
-				SWIFT_VERSION = 4.2;
+				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;

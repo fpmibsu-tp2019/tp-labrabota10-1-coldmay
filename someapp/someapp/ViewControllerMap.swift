@@ -24,8 +24,8 @@ class ViewControllerMap: UIViewController {
     var timer: Timer!
     var counter: Int!
     var rectangle = GMSPolyline()
-    var startCor = CLLocationCoordinate2D()
-    var curCor = CLLocationCoordinate2D()
+    var startCor = CLLocation()
+    var curCor = CLLocation()
     var locationManager = CLLocationManager()
     lazy var mapView = GMSMapView()
     var flag = Bool()
@@ -76,65 +76,10 @@ class ViewControllerMap: UIViewController {
         counter+=1
         durationLabel.text = String(counter)
         
-        var startLocation: CLLocationCoordinate2D = startCor
-        var endLocation: CLLocationCoordinate2D = curCor
-        print("start")
-        print(startLocation)
-        print("end")
-        print(endLocation)
-        let origin = "\(startLocation.latitude),\(startLocation.longitude)"
-        let destination = "\(endLocation.latitude),\(endLocation.longitude)"
-        let urlString = "https://maps.googleapis.com/maps/api/directions/json?origin=\(origin)&destination=\(destination)&mode=walking&key=AIzaSyDR9p8EzcY146HNpz3Y2LEfVCOBhuj8GoI"
-        guard let url = URL(string: urlString) else {
-            print("Error: cannot create URL")
-            return
-        }
-        let urlRequest = URLRequest(url: url)
-        let config = URLSessionConfiguration.default
-        let session = URLSession(configuration: config)
-        
-        let task = session.dataTask(with: urlRequest){
-            data, response, error in
-            
-            do {
-                print("work with json")
-                let  data = data
-                    
-                
-                let json  = try JSONSerialization.jsonObject(with: data!, options: []) as? NSDictionary
-                print(json)
-                let arrayRoutes = json!["routes"] as! NSArray
-                let arrLegs = (arrayRoutes[0] as! NSDictionary).object(forKey: "legs") as! NSArray
-                let arrSteps = arrLegs[0] as! NSDictionary
-                
-                let dicDistance = arrSteps["distance"] as! NSDictionary
-                let distance = dicDistance["text"] as! String
-                self.distanceLabel.text=distance
-                DispatchQueue.global(qos: .background).async {
-                    let array = json!["routes"] as! NSArray
-                    let dic = array[0] as! NSDictionary
-                    let dic1 = dic["overview_polyline"] as! NSDictionary
-                    let points = dic1["points"] as! String
-                    print(points)
-                    
-                    DispatchQueue.main.async {
-                       let path = GMSPath(fromEncodedPath: points)
-                        self.rectangle.map = nil
-                        self.rectangle = GMSPolyline(path: path)
-                        self.rectangle.strokeWidth = 4
-                        self.rectangle.strokeColor = UIColor.blue
-                        self.rectangle.map = self.gMapViev
-                        
-                    }
-                }
-                
-                //self.speedLabel.text=
-            }
-            catch{
-                print("error")
-            }
-        }
-        task.resume()
+        var distance=startCor.distance(from: curCor)
+        self.distanceLabel.text=String(distance)
+        self.speedLabel.text=String(Double(distance)/(Double(counter)/3600.0))
+        self.caloriesLabel.text=String((88*Double(distance)*Double(distance)/(Double(counter)/3600.0))/4184)
     }
     
     @IBAction func stopF(_ sender: Any) {
@@ -162,12 +107,10 @@ extension ViewControllerMap: CLLocationManagerDelegate {
         let userLocation = locations.last
         print(userLocation)
         if(flag==true){
-            startCor.latitude = (userLocation?.coordinate.latitude)!
-            startCor.longitude = (userLocation?.coordinate.longitude)!
+            startCor = userLocation!
             flag=false
         }
-        curCor.latitude = (userLocation?.coordinate.latitude)!
-        curCor.longitude = (userLocation?.coordinate.longitude)!
+        curCor = userLocation!
         let center = CLLocationCoordinate2D(latitude: userLocation!.coordinate.latitude, longitude: userLocation!.coordinate.longitude)
         
         let camera = GMSCameraPosition.camera(withLatitude: userLocation!.coordinate.latitude,

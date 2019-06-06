@@ -12,6 +12,8 @@
 		F47D60E322A6D5CF006AFC5A /* Run+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = F47D60E122A6D5CF006AFC5A /* Run+CoreDataClass.swift */; };
 		F47D60E422A6D5CF006AFC5A /* Run+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = F47D60E222A6D5CF006AFC5A /* Run+CoreDataProperties.swift */; };
 		F47D60E622A7AA50006AFC5A /* HistoryTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F47D60E522A7AA50006AFC5A /* HistoryTableViewCell.swift */; };
+		1DC8EC5D22A81D89005BB19E /* WeatherViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DC8EC5C22A81D89005BB19E /* WeatherViewController.swift */; };
+		1DC8EC6022A81EEC005BB19E /* Configuration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DC8EC5F22A81EEC005BB19E /* Configuration.swift */; };
 		F4C23ED222A56D82004CD90F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4C23ED122A56D82004CD90F /* AppDelegate.swift */; };
 		F4C23ED422A56D82004CD90F /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4C23ED322A56D82004CD90F /* ViewController.swift */; };
 		F4C23ED722A56D82004CD90F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F4C23ED522A56D82004CD90F /* Main.storyboard */; };
@@ -38,6 +40,8 @@
 		F47D60E122A6D5CF006AFC5A /* Run+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Run+CoreDataClass.swift"; sourceTree = "<group>"; };
 		F47D60E222A6D5CF006AFC5A /* Run+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Run+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		F47D60E522A7AA50006AFC5A /* HistoryTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryTableViewCell.swift; sourceTree = "<group>"; };
+		1DC8EC5C22A81D89005BB19E /* WeatherViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherViewController.swift; sourceTree = "<group>"; };
+		1DC8EC5F22A81EEC005BB19E /* Configuration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Configuration.swift; sourceTree = "<group>"; };
 		F4C23ECE22A56D82004CD90F /* someapp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = someapp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F4C23ED122A56D82004CD90F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		F4C23ED322A56D82004CD90F /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -70,12 +74,36 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		1DC8EC5B22A81C4C005BB19E /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				1DC8EC5C22A81D89005BB19E /* WeatherViewController.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		1DC8EC5E22A81ED0005BB19E /* Configuration */ = {
+			isa = PBXGroup;
+			children = (
+				1DC8EC5F22A81EEC005BB19E /* Configuration.swift */,
+			);
+			path = Configuration;
+			sourceTree = "<group>";
+		};
+		1DC8EC6522A85CC6005BB19E /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		F4C23EC522A56D82004CD90F = {
 			isa = PBXGroup;
 			children = (
 				F4C23ED022A56D82004CD90F /* someapp */,
 				F4C23EE822A56D84004CD90F /* someappTests */,
 				F4C23ECF22A56D82004CD90F /* Products */,
+				1DC8EC6522A85CC6005BB19E /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -93,6 +121,8 @@
 			children = (
 				F47D60E122A6D5CF006AFC5A /* Run+CoreDataClass.swift */,
 				F47D60E222A6D5CF006AFC5A /* Run+CoreDataProperties.swift */,
+				1DC8EC5E22A81ED0005BB19E /* Configuration */,
+				1DC8EC5B22A81C4C005BB19E /* Controller */,
 				F4C23ED122A56D82004CD90F /* AppDelegate.swift */,
 				F4C23ED322A56D82004CD90F /* ViewController.swift */,
 				F4C23ED522A56D82004CD90F /* Main.storyboard */,
@@ -219,7 +249,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				F47D60E622A7AA50006AFC5A /* HistoryTableViewCell.swift in Sources */,
+				1DC8EC6022A81EEC005BB19E /* Configuration.swift in Sources */,
 				F4C23EF522A57B6C004CD90F /* LoginViewController.swift in Sources */,
+				1DC8EC5D22A81D89005BB19E /* WeatherViewController.swift in Sources */,
 				F4C23ED422A56D82004CD90F /* ViewController.swift in Sources */,
 				F47D60E022A6D0A1006AFC5A /* AddRunViewController.swift in Sources */,
 				F4C23EDA22A56D82004CD90F /* someapp.xcdatamodeld in Sources */,
@@ -325,6 +357,7 @@
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OBJC_BRIDGING_HEADER = "/Users/mikitaishchanka/tp-labrabota10-1-coldmay/someapp/someapp/Header-Bridging.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 			};
 			name = Debug;
@@ -379,6 +412,7 @@
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;
 				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OBJC_BRIDGING_HEADER = "/Users/mikitaishchanka/tp-labrabota10-1-coldmay/someapp/someapp/Header-Bridging.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-O";
 				VALIDATE_PRODUCT = YES;
 			};
@@ -388,8 +422,13 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_WARN__ARC_BRIDGE_CAST_NONARC = NO;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = F7LX2LKB8D;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
 				INFOPLIST_FILE = someapp/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -397,6 +436,9 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.volha.tp.someapp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_INSTALL_OBJC_HEADER = NO;
+				SWIFT_OBJC_BRIDGING_HEADER = "";
+				SWIFT_PRECOMPILE_BRIDGING_HEADER = NO;
 				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -406,8 +448,13 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_WARN__ARC_BRIDGE_CAST_NONARC = NO;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = F7LX2LKB8D;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
 				INFOPLIST_FILE = someapp/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -415,6 +462,9 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.volha.tp.someapp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_INSTALL_OBJC_HEADER = NO;
+				SWIFT_OBJC_BRIDGING_HEADER = "";
+				SWIFT_PRECOMPILE_BRIDGING_HEADER = NO;
 				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};

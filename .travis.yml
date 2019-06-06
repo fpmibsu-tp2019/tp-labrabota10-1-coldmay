@@ -1,0 +1,3 @@
+language: swift
+xcode_project: someapp.xcodeproj
+xcode_destination: platform=iOS Simulator,OS=12.0,name=iPhone 8

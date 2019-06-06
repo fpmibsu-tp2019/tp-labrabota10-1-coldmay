@@ -223,7 +223,7 @@
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="64x-b8-LAK">
-                                <rect key="frame" x="139" y="29" width="117" height="60"/>
+                                <rect key="frame" x="154" y="29" width="117" height="60"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="50"/>
                                 <nil key="textColor"/>
@@ -291,14 +291,14 @@
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="info" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Yx1-RU-m1N">
-                                <rect key="frame" x="43" y="431" width="289" height="127"/>
+                                <rect key="frame" x="43" y="431" width="292" height="127"/>
                                 <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="322" verticalHuggingPriority="258" misplaced="YES" text="BMI = " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="D8d-Eh-sfQ">
-                                <rect key="frame" x="143" y="336" width="112" height="51"/>
+                                <rect key="frame" x="143" y="336" width="216" height="51"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="51" id="aWm-2w-dLd"/>
                                 </constraints>
@@ -322,8 +322,8 @@
                             <constraint firstItem="fhZ-82-qRr" firstAttribute="top" secondItem="6Ma-9M-vv3" secondAttribute="top" constant="119" id="Leg-df-RcK"/>
                             <constraint firstItem="Wr7-2r-9za" firstAttribute="leading" secondItem="x8x-k7-E4c" secondAttribute="leadingMargin" id="RQk-DS-mlB"/>
                             <constraint firstItem="fhZ-82-qRr" firstAttribute="leading" secondItem="6Ma-9M-vv3" secondAttribute="leading" constant="139" id="VU6-DW-wus"/>
-                            <constraint firstItem="c4D-i3-7m3" firstAttribute="centerX" secondItem="D8d-Eh-sfQ" secondAttribute="centerX" id="cuK-tT-x7c"/>
-                            <constraint firstItem="D8d-Eh-sfQ" firstAttribute="centerX" secondItem="Yx1-RU-m1N" secondAttribute="centerX" id="lRl-V7-Uez"/>
+                            <constraint firstItem="c4D-i3-7m3" firstAttribute="centerX" secondItem="D8d-Eh-sfQ" secondAttribute="centerX" constant="-64" id="cuK-tT-x7c"/>
+                            <constraint firstItem="D8d-Eh-sfQ" firstAttribute="centerX" secondItem="Yx1-RU-m1N" secondAttribute="centerX" constant="62.5" id="lRl-V7-Uez"/>
                             <constraint firstItem="c4D-i3-7m3" firstAttribute="leading" secondItem="6Ma-9M-vv3" secondAttribute="leading" constant="155" id="nGZ-7O-0FI"/>
                             <constraint firstItem="c4D-i3-7m3" firstAttribute="centerX" secondItem="6Ma-9M-vv3" secondAttribute="centerX" id="trO-jj-S0E"/>
                             <constraint firstItem="Yx1-RU-m1N" firstAttribute="leading" secondItem="6Ma-9M-vv3" secondAttribute="leading" constant="43" id="yZc-VL-rtg"/>
@@ -582,6 +582,7 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
+        <segue reference="rA2-de-tdL"/>
         <segue reference="Q9K-c7-4hU"/>
         <segue reference="scg-pb-zND"/>
         <segue reference="ckN-20-VyO"/>

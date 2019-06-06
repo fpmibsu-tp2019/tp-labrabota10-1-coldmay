@@ -208,11 +208,6 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="OxY-r7-3rm" customClass="GMSMapView">
-                                <rect key="frame" x="16" y="201" width="343" height="383"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                            </view>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VGd-xV-hKy">
                                 <rect key="frame" x="154" y="599" width="61" height="48"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -229,6 +224,10 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="LeC-dK-FRd">
+                                <rect key="frame" x="0.0" y="201" width="375" height="406"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </mapView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <viewLayoutGuide key="safeArea" id="dyG-17-ZII"/>
@@ -237,7 +236,7 @@
                         <outlet property="caloriesLabel" destination="xvY-XT-uSn" id="hJs-93-cdg"/>
                         <outlet property="distanceLabel" destination="5mf-S3-HdD" id="6h0-QN-WNR"/>
                         <outlet property="durationLabel" destination="64x-b8-LAK" id="lvf-s9-uOl"/>
-                        <outlet property="gMapViev" destination="OxY-r7-3rm" id="7wL-Ef-7Gk"/>
+                        <outlet property="mapViewA" destination="LeC-dK-FRd" id="L6R-3k-Ixf"/>
                         <outlet property="speedLabel" destination="nAw-q9-9Fa" id="yHu-Ai-3qC"/>
                         <outlet property="startButton" destination="vcb-yf-WRc" id="hVB-Sd-s7G"/>
                         <outlet property="stopButton" destination="VGd-xV-hKy" id="lZx-qE-hKW"/>
@@ -431,6 +430,6 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="rA2-de-tdL"/>
+        <segue reference="Q9K-c7-4hU"/>
     </inferredMetricsTieBreakers>
 </document>

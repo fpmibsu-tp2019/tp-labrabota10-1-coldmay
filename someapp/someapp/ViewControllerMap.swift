@@ -9,11 +9,11 @@
 import UIKit
 import GoogleMaps
 import CoreLocation
+import MapKit
 
-
-class ViewControllerMap: UIViewController {
+class ViewControllerMap: UIViewController, CLLocationManagerDelegate, MKMapViewDelegate {
     
-    @IBOutlet weak var gMapViev: GMSMapView!
+    @IBOutlet weak var mapViewA: MKMapView!
     @IBOutlet weak var durationLabel: UILabel!
     @IBOutlet weak var distanceLabel: UILabel!
     @IBOutlet weak var speedLabel: UILabel!
@@ -24,10 +24,9 @@ class ViewControllerMap: UIViewController {
     var timer: Timer!
     var counter: Int!
     var rectangle = GMSPolyline()
-    var startCor = CLLocation()
-    var curCor = CLLocation()
+    var startCor: CLLocationCoordinate2D?
+    var curCor:CLLocationCoordinate2D?
     var locationManager = CLLocationManager()
-    lazy var mapView = GMSMapView()
     var flag = Bool()
     
     override func viewDidLoad() {
@@ -40,32 +39,27 @@ class ViewControllerMap: UIViewController {
         caloriesLabel.text="0.0"
         counter=0
         flag=false
-        let camera = GMSCameraPosition.camera(withLatitude: 53.939550, longitude: 27.464190, zoom: 10)
-        //mapView = GMSMapView.map(withFrame: CGRect.zero, camera: camera)
-        gMapViev.animate(to: camera)
-        locationManager.delegate = self
-        locationManager.requestWhenInUseAuthorization()
-        locationManager.desiredAccuracy = kCLLocationAccuracyBest
-        locationManager.startUpdatingLocation()
-        locationManager.startMonitoringSignificantLocationChanges()
+        mapViewA.delegate = self
+        mapViewA.showsScale = true
+        mapViewA.showsPointsOfInterest = true
+        mapViewA.showsUserLocation = true
+        
  
-        /*locationManager.requestAlwaysAuthorization()
+        locationManager.requestAlwaysAuthorization()
         locationManager.requestWhenInUseAuthorization()
         if CLLocationManager.locationServicesEnabled(){
             locationManager.delegate = self
             locationManager.desiredAccuracy = kCLLocationAccuracyNearestTenMeters
             locationManager.startUpdatingLocation()
-        }*/
+        }
+        startCor = locationManager.location?.coordinate
+        
     }
-    
-    func locationManager(_ manager: CLLocationManager, didFailWithError error: Error) {
-        print("Error to get location : \(error)")
-    }
-    
-    
     
     @IBAction func startF(_ sender: Any) {
         flag=true
+        
+        print(startCor)
         timer = Timer.scheduledTimer(timeInterval: 1.0, target: self, selector: #selector(timerUpdate), userInfo: nil, repeats: true)
         startButton.isHidden=true
         stopButton.isHidden=false
@@ -75,16 +69,58 @@ class ViewControllerMap: UIViewController {
     @objc func timerUpdate() {
         counter+=1
         durationLabel.text = String(counter)
-        
-        var distance=startCor.distance(from: curCor)
+        curCor = locationManager.location?.coordinate
+        let point1 = CLLocation(latitude: startCor!.latitude, longitude: startCor!.longitude)
+        let point2 = CLLocation(latitude: curCor!.latitude, longitude: curCor!.longitude)
+        var distance=point1.distance(from: point2)
         self.distanceLabel.text=String(distance)
         self.speedLabel.text=String(Double(distance)/(Double(counter)/3600.0))
         self.caloriesLabel.text=String((88*Double(distance)*Double(distance)/(Double(counter)/3600.0))/4184)
+        
+        
+        
+        let sourcePlacemark = MKPlacemark(coordinate: startCor!)
+        let destPlacemark = MKPlacemark(coordinate: curCor!)
+        let sourceItem = MKMapItem(placemark: sourcePlacemark)
+        let destItem = MKMapItem(placemark: destPlacemark)
+        
+        let directionRequest = MKDirections.Request()
+        directionRequest.source = sourceItem
+        directionRequest.destination = destItem
+        directionRequest.transportType = .walking
+        
+        let directions = MKDirections(request: directionRequest)
+        directions.calculate(completionHandler: {
+            response,error in
+            guard let response = response else {
+                if let error = error{
+                    print("Something Went Wrong")
+                }
+                return
+            }
+            
+            let route = response.routes[0]
+            self.mapViewA.addOverlay(route.polyline, level: .aboveRoads)
+            
+            let rekt = route.polyline.boundingMapRect
+            self.mapViewA.setRegion(MKCoordinateRegion(rekt), animated: true)
+        })
+    }
+    
+    func mapView(_ mapView: MKMapView, rendererFor overlay: MKOverlay) -> MKOverlayRenderer {
+        let renderer = MKPolygonRenderer(overlay: overlay)
+        renderer.strokeColor = UIColor.blue
+        renderer.lineWidth = 5.0
+        
+        return renderer
     }
     
     @IBAction func stopF(_ sender: Any) {
         timer.invalidate()
         durationLabel.text = "0.0"
+        distanceLabel.text = "0.0"
+        speedLabel.text = "0.0"
+        caloriesLabel.text = "0.0"
         counter=0
         startButton.isHidden=false
         stopButton.isHidden=true
@@ -102,24 +138,15 @@ class ViewControllerMap: UIViewController {
 
 }
 
-extension ViewControllerMap: CLLocationManagerDelegate {
+/*extension ViewControllerMap: CLLocationManagerDelegate {
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
-        let userLocation = locations.last
-        print(userLocation)
+        locationManager.stopUpdatingLocation()
+        let locValue: CLLocationCoordinate2D = (manager.location?.coordinate)!
+         print(locValue)
         if(flag==true){
             startCor = userLocation!
             flag=false
         }
         curCor = userLocation!
-        let center = CLLocationCoordinate2D(latitude: userLocation!.coordinate.latitude, longitude: userLocation!.coordinate.longitude)
-        
-        let camera = GMSCameraPosition.camera(withLatitude: userLocation!.coordinate.latitude,
-                                              longitude: userLocation!.coordinate.longitude, zoom: 13.0)
-        gMapViev.animate(to: camera)
-        mapView.isMyLocationEnabled = true
-        
-        locationManager.stopUpdatingLocation()
-        /*let locValue: CLLocationCoordinate2D = (manager.location?.coordinate)!
-         print(locValue)*/
     }
-}
+}*/
